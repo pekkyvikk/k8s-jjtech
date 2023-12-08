@@ -4,7 +4,7 @@ metadata:
   name: jjtech-pod
   namespace: application
   labels:
-    app: myapp
+    app: my-app
     run: nginx
 spec:
   containers:

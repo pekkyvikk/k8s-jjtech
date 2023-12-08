@@ -78,20 +78,21 @@ metadata:
 spec:
   ingressClassName: alb
   rules:
-   # - host: tower.cadana.link
-        paths:
-          - path: /hello-v1
-            pathType: Prefix
-            backend:
-              service:
-                name: hello-v1-svc
-                port:
-                  number: 8080
-          - path: /hello-v2
-            pathType: Prefix
-            backend:
-              service:
-                name: hello-v2-svc
-                port:
-                  number: 8080
-      
+  - http: 
+      paths:
+        - path: /hello-v1
+          pathType: Prefix
+          backend:
+            service:
+              name: hello-v1-svc
+              port:
+                number: 8080
+        - path: /hello-v2
+          pathType: Prefix
+          backend:
+            service:
+              name: hello-v2-svc
+              port:
+                number: 8080
+        
+  
