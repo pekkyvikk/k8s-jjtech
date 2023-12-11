@@ -52,7 +52,6 @@ spec:
       containers:
       - name: mysql
         image: mysql:latest
-        cmd:
         env:
           - name: MYSQL_ROOT_PASSWORD
             value: "your-root-password"
