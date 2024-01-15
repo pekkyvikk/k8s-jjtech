@@ -1,3 +1,5 @@
+# Apply default policy to cblock all connection between pods before finegrained policy
+
 # egress from app-pod to db-pod
 apiVersion: networking.k8s.io/v1
 kind: NetworkPolicy

@@ -8,11 +8,14 @@ spec:
   volumeMode: Filesystem
   accessModes:
     - ReadWriteMany
+  # claimRef:
+  #   namespace: default  # Namespace of the PVC
+  #   name: example-pvc  # Name of the PVC
   persistentVolumeReclaimPolicy: Retain
   storageClassName: efs-storage
   csi:
     driver: efs.csi.aws.com
-    volumeHandle: fs-038f2701aa38f262f
+    volumeHandle: fs-0dec7eafaba451a28
 
 
 

@@ -13,16 +13,16 @@ spec:
       labels:
         app: my-app
     spec:
-      nodeName: ip-10-20-107-121.ec2.internal
+      nodeName: ip-10-0-2-195.ec2.internal
       containers:
         - name: nginx
           image: nginx
           ports:
             - containerPort: 8080
           volumeMounts:
-            - name: data-volume
+            - name: data-volume2
               mountPath: /opt # Mount path inside the container
       volumes:
-        - name: data-volume
+        - name: data-volume2
           persistentVolumeClaim:
             claimName: local-pvc  # Name of your PersistentVolumeClaim

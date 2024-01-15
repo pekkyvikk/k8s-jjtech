@@ -9,7 +9,7 @@ echo -n "your-user-password" | base64
 2. Run following command to decode password
 
 ```bash
-echo "cm9vdC1wYXNzd29yZA==" | base64 --decode
+echo "YWRtaW4xMjM=" | base64 --decode
 ```
 
 3. Sign into mysql database by using password configured as secret

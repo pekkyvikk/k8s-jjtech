@@ -20,12 +20,11 @@ spec:
           volumeMounts:
             - name: data-volume
               mountPath: /opt # Mount path inside the container
+            
       volumes:
         - name: data-volume
           persistentVolumeClaim:
             claimName: efs-pvc  # Name of your PersistentVolumeClaim
-
-
 --- 
 
 apiVersion: apps/v1

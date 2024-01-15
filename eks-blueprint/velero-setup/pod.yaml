@@ -1,9 +1,19 @@
+
+
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: production
+  labels:
+    env: dev
+
+--- 
 # Deploy app-pod and service
 apiVersion: v1
 kind: Pod
 metadata:
   name: app-pod
-  namespace: development
+  namespace: production
   labels:
     pod: app-pod
 spec:
@@ -12,11 +22,11 @@ spec:
     image: nginx
     resources:
       limits:
-        cpu: 100m
-        memory: 100Mi
+        cpu: 200m
+        memory: 500Mi
       requests:
         cpu: 100m
-        memory: 100Mi
+        memory: 200Mi
     ports:
     - containerPort: 80
       name:  http
@@ -26,7 +36,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: app-pod
-  namespace: development
+  namespace: production
 spec:
   selector:
     app: app-pod
@@ -45,7 +55,7 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: db-pod
-  namespace: development
+  namespace: production
   labels:
     pod: db-pod
 spec:
@@ -54,11 +64,11 @@ spec:
     image: nginx
     resources:
       limits:
-        cpu: 100m
-        memory: 100Mi
+        cpu: 200m
+        memory: 500Mi
       requests:
         cpu: 100m
-        memory: 100Mi
+        memory: 200Mi
     ports:
     - containerPort: 80
       name:  http
@@ -68,7 +78,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: db-pod
-  namespace: development
+  namespace: production
 spec:
   selector:
     app: db-pod
